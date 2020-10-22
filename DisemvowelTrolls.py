@@ -9,3 +9,19 @@ For example, the string "This website is for losers LOL!" would become "Ths wbst
 
 Note: for this kata y isn't considered a vowel.
 """
+
+def disemvowel(string):
+    vowels = ["a","e","i","o","u","A","E","I","O","U"]
+    
+    for char in string:
+        if char in vowels:
+            string = string.replace(char,"")
+    return string
+
+def tests():
+    assert disemvowel("This website is for losers LOL!") == "Ths wbst s fr lsrs LL!"
+
+
+if __name__ == "__main__":
+    tests()
+    print("Everything passed")
