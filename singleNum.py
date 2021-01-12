@@ -41,3 +41,17 @@ class Solution:
         for num in count:
             if count[num] == 1:
                 return num
+
+        # Another solution with bitwise operator more research needed to understand
+        # result = 0
+        # for i in range(len(nums)):
+        #     print(result, "CURRENT RESULT")
+        #     print(result, nums[i])
+        #     result ^= nums[i]
+        #     print(result, "CHANGED RESULT")
+        # return result
+
+
+s = Solution()
+
+print(s.singleNumber([2, 2, 2, 3, 4, 4, 5, 5]))
