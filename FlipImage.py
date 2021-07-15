@@ -1,18 +1,8 @@
 class Solution:
     def flipAndInvertImage(self, image):
         """
-        U
-        flip the inner lists horizontally
-        where there is a 1 change it to 0
-        where there is a 0 change it to 1
-
-        P
-        loop through the outer list
-        in the inner lists have a pointer on the first and last elements
-        if the first and last elements are the same thats when we swap
-        then move the first pointer forward and last backwards
-        once it gets to the middle you still swap
-
+        the pattern is if the low and the high end of the inner lists values are equal you
+        switch them and once you get the low and high equal you also switch that value
         """
         for i in range(len(image)):
             low = 0
