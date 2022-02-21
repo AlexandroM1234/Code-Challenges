@@ -34,11 +34,9 @@ class Solution:
             row = 0
             # When a problem requires you to isolate a level, you can simply take the length of the queue at the start of the row and then once you've processed that many nodes from the queue, you'll know that you're ready to start the next row.
             # So as long as the queue exists, we'll take each row, sum the row's values (row), then divide by the length of the row (qlen) to find the average, pushing each average into our answer array (ans).
-            for i in range(qlen):
+            for _ in range(qlen):
                 curr = q.pop(0)
-                print(curr.val)
                 row += curr.val
-                print(row)
                 if curr.left:
                     q.append(curr.left)
                 if curr.right:
