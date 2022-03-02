@@ -57,11 +57,11 @@ class Solution:
             # Case 3: 2 children
             # Trickiest case because we have 2 nodes to keep track of
             else:
-                # we have to find the smallest value on the right
+                # we have to find the smallest value in the right subtree
                 minRoot = self.findMinNode(root.right)
                 # the root's value is going to be the smallest value
                 root.val = minRoot.val
-                # then continue on the right
+                # but once we remove that value from the tree we have to take care of the rest of the tree because it will start with an empty node
                 root.right = self.deleteNode(root.right, root.val)
 
         return root
