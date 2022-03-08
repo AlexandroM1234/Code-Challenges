@@ -48,3 +48,21 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
         return False
+
+    # Solution 2
+    def hasCycle2(self, head: ListNode) -> bool:
+        # have a set to keep track of the nodes we've seen
+        check = set()
+
+        current = head
+        # traverse the LL
+        while current:
+            # if the node is the set return true otherwise add it to the set
+            if current in check:
+                return True
+            else:
+                check.add(current)
+            # keep traversing the LL
+            current = current.next
+        # if we traverse the LL without finding a node return false
+        return False
