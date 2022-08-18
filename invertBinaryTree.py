@@ -39,3 +39,21 @@ class Solution:
         root.right = left
         root.left = right
         return root
+
+    def invertTreeV2(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return
+        q = [root]
+
+        while q:
+            cur = q.pop(0)
+            if cur.left or cur.right:
+                left = cur.left
+                right = cur.right
+                cur.left = right
+                cur.right = left
+            if cur.left:
+                q.append(cur.left)
+            if cur.right:
+                q.append(cur.right)
+        return root
